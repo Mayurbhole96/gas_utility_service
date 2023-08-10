@@ -1,0 +1,166 @@
+{
+	"info": {
+		"_postman_id": "577dfb1a-c419-4542-acdc-f039d059100b",
+		"name": "Gas Utility",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "23354805"
+	},
+	"item": [
+		{
+			"name": "User Register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/register"
+			},
+			"response": []
+		},
+		{
+			"name": "User Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/login"
+			},
+			"response": []
+		},
+		{
+			"name": "User Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"Mayur\",\r\n    \"email\":\"mayur123@gmail.com\",\r\n    \"password\":\"Pass@123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://127.0.0.1:8000/backend/logout"
+			},
+			"response": []
+		},
+		{
+			"name": "create service request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "customer",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "request_type",
+							"value": "Appliance Repair",
+							"type": "text"
+						},
+						{
+							"key": "details",
+							"value": "Dishwasher not working properly.",
+							"type": "text"
+						},
+						{
+							"key": "attached_files",
+							"type": "file",
+							"src": "/C:/Users/Mayur/Downloads/applience_repair.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/backend/service/?customer=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"backend",
+						"service",
+						""
+					],
+					"query": [
+						{
+							"key": "customer",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tracking Service Request",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "service_request",
+							"value": "2",
+							"type": "text"
+						},
+						{
+							"key": "status",
+							"value": "Resolved",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/backend/tracking/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"backend",
+						"tracking",
+						"1",
+						""
+					],
+					"query": [
+						{
+							"key": "customer",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
